@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ movie.title }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            width: 100%;
+        }
+        .movie-title {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        .movie-details {
+            margin-bottom: 20px;
+        }
+        .movie-detail {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="movie-title">{{ movie.title }}</div>
+        <div class="movie-details">
+            <div class="movie-detail"><strong>Año:</strong> {{ movie.year }}</div>
+            <div class="movie-detail"><strong>Autor:</strong> {{ movie.author }}</div>
+            <div class="movie-detail"><strong>Género:</strong> {{ movie.genre }}</div>
+            <div class="movie-detail"><strong>Sinopsis:</strong> {{ movie.synopsis }}</div>
+        </div>
+        <a href="{% url 'movie_list' %}">Volver a la lista de películas</a>
+    </div>
+</body>
+</html>

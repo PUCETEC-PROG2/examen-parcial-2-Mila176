@@ -1,5 +1,5 @@
 """
-URL configuration for examen2 project.
+URL configuration for movie_library project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.2/topics/http/urls/
@@ -19,13 +19,14 @@ Including another URLconf
 
 # urlpatterns = [
 #     path('admin/', admin.site.urls),
+#     path('',include('movies.urls')),
 # ]
 
 from django.urls import path
+
 from . import views
 
 urlpatterns = [
-    path('', views.index, name='index'),
-    path('movies/', views.movie_list, name='movie_list'),
-    path('movies/<int:pk>/', views.movie_details, name='movie_detail'),
-    ]
+    path("", views.index, name="index"),
+    path("<int:movies_id>/", views.movies, name="movies"),
+]
